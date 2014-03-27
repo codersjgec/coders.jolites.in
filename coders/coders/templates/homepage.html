@@ -1,0 +1,25 @@
+{% extends "site_base.html" %}
+
+{% load i18n %}
+
+{% block head_title %}{% trans "Welcome" %}{% endblock %}
+
+{% block body_class %}home{% endblock %}
+
+{% block body %}
+    <h1>{% trans "Welcome to Coders Firefox Club" %}</h1>
+    <p>
+        {% blocktrans %}
+        <b>Coders</b> is the Firefox Club of Jalpaiguri Government Engineering College.
+        {% endblocktrans %}
+    </p>
+    
+    <h2>About Coders Website</h2>
+    <p>
+        {% blocktrans %}
+        Coders Website is made using Django and Python as language. It is open source for anyone who wishes to contribute. It is based on Pinax and hereby retain the rights to the project. Have fun.
+        {% endblocktrans %}
+    </p>
+    
+    <p><a href="" class="btn btn-primary btn-large">{% trans "Learn more &raquo;" %}</a></p>
+{% endblock %}
