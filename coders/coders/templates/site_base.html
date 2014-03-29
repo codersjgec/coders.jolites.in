@@ -6,13 +6,25 @@
 {% block style_base %}
     <link href="{% static "pinax/css/theme.css" %}" rel="stylesheet">
     <link href="{% static "css/site.css" %}" rel="stylesheet">
+
+    <!-- Bootstrap itself -->
+    <link href="http://netdna.bootstrapcdn.com/bootstrap/3.0.3/css/bootstrap.min.css" rel="stylesheet" type="text/css">
+
+    <!-- Custom styles -->
+    <link rel="stylesheet" href="{% static "css/magister.css" %}">
+
+    <!-- Fonts -->
+    <link href="http://netdna.bootstrapcdn.com/font-awesome/4.0.3/css/font-awesome.min.css" rel="stylesheet" type="text/css">
+    <link href='http://fonts.googleapis.com/css?family=Wire+One' rel='stylesheet' type='text/css'>
+
+    <link rel="shortcut icon" href="{% static "images/favicon.ico" %}">
     {% block extra_style %}{% endblock %}
 {% endblock %}
 
 
 {% block extra_head_base %}
     {% block extra_head %}{% endblock %}
-{% endblock %}
+{% endblock %}<link rel="shortcut icon" href="assets/images/gt_favicon.png">
 
 
 {% block footer %}
@@ -22,20 +34,13 @@
 {% block nav %}
     <ul class="nav navbar-nav">
         <li id="tab_first">
-            <a href="">page 1</a>
+            <a href="" title="The official Mozilla Wiki of Coders">{% trans "Mozilla Wiki" %}</a>
         </li>
         <li id="tab_second">
-            <a href="">page 2</a>
+            <a href="" title="Learn About our Latest Events">{% trans "Etherpad" %}</a>
         </li>
         <li id="tab_third" class="dropdown">
-            <a href="#" class="dropdown-toggle" data-toggle="dropdown">
-                Coders
-                <b class="caret"></b>
-            </a>
-            <ul class="dropdown-menu">
-                <li><a href="">{% trans "Mozilla Wiki" %}</a></li>
-                <li><a href="">{% trans "Facebook Group" %}</a></li>
-            </ul>
+            <a href="" title="Official Facebook group of Coders">{% trans "Facebook Group" %}</a>
         </li>
     </ul>
 {% endblock %}
@@ -49,5 +54,11 @@
     <script src="{% block jquery_src %}{% static "pinax/js/jquery.js" %}{% endblock %}"></script>
     <script src="{% static "js/bootstrap.min.js" %}"></script>
     <script src="{% static "pinax/js/theme.js" %}"></script>
+    <!-- Load js libs only when the page is loaded. -->
+    <script src="http://ajax.googleapis.com/ajax/libs/jquery/1.10.2/jquery.min.js"></script>
+    <script src="http://netdna.bootstrapcdn.com/bootstrap/3.0.3/js/bootstrap.min.js"></script>
+    <script src="{% static "js/modernizr.custom.72241.js" %}"></script>
+    <!-- Custom template scripts -->
+    <script src="{% static "js/magister.js" %}"></script>
     {% block extra_script %}{% endblock %}
 {% endblock %}
